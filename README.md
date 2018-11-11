@@ -3,8 +3,11 @@
     <th style="padding:0px 5px;text-align:right;float:right;">
       <small><small>
       <a href=#overview>Overview</a> |
+      <a href=#overview>Design</a> |
       <a href=#prerequisites>Prerequisites</a> |
-        <a href=#usage>Usage</a>
+      <a href=#usage>Usage</a> |
+      <a href=#running-tests>Running Tests</a> |
+      <a href=#related-work>Related Work</a>
       </small><small>
     </th>
   </tr>
@@ -19,6 +22,8 @@
 ## Overview
 
 This is a library that can help crazy people treat a subreddit as a persistent storage backend / document store.  This is, of course, a horrible idea.  This whole thing should be considered an interesting toy at best, and nothing about it is efficient.  Besides, Reddit will probably kick you off pretty quickly if you do anything at volume.
+
+## Design
 
 This implementation maps *top-level posts on the subreddit* to "topics", aka what is simply called "databases" in other infrastructure like PG, Redis, or Mongo.  Topics are namespaces and do not directly store key/values, but organize them.  
 
@@ -79,3 +84,7 @@ db[topic_name].pop(key)
 del db[topic_name]
 db[topic_name].delete()
 ```
+
+## Running Tests
+
+Placeholder

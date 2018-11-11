@@ -1,14 +1,16 @@
 """ redditdb.db
 """
+import os
 import praw
+from memoized_property import memoized_property
 
 from .util import Loggable
 from .topic import LazyTopic
 
 
-class RedditBase(Loggable):
+class RedditDB(Loggable):
     def __init__(self, subreddit=None, client_id=None, client_secret=None, username=None, password=None, **kwargs):
-        super(RedditBase, self).__init__(**kwargs)
+        super(RedditDB, self).__init__(**kwargs)
         self.subreddit_name = subreddit or os.environ['REDDIT_SUBREDDIT']
         self.client_id = client_id or os.environ['REDDIT_CLIENT_ID']
         self.client_secret = client_secret or os.environ['REDDIT_CLIENT_SECRET']

@@ -1,5 +1,7 @@
 """ redditdb.topic
 """
+from redditdb.util import Loggable
+from memoized_property import memoized_property
 
 
 class Topic(Loggable):

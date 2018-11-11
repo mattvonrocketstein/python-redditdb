@@ -1,0 +1,2 @@
+# use whatever's mentioned in setup.py
+-e .
