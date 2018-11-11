@@ -1,5 +1,5 @@
 <table>
-  <tr><th><strong>stack-core</strong></th>
+  <tr><th><strong>python-redditdb</strong></th>
     <th style="padding:0px 5px;text-align:right;float:right;">
       <small><small>
       <a href=#overview>Overview</a> |

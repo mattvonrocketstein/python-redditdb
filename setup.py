@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 PACKAGE_NAME = 'redditdb'
 REQUIREMENTS = [
-    'praw', 'dotenv', "click",
+    'praw', 'python-dotenv', "click",
     'memoized-property',
 ]
 GITHUB_REQUIREMENTS = [
