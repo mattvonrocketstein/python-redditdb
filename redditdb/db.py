@@ -4,8 +4,8 @@ import os
 import praw
 from memoized_property import memoized_property
 
-from .util import Loggable
-from .topic import LazyTopic
+from loggable import Loggable
+from .topic import Topic, LazyTopic
 
 
 class RedditDB(Loggable):
@@ -36,12 +36,18 @@ class RedditDB(Loggable):
     def __iter__(self):
         """ return toplevel submissions """
         for topic in self.subreddit.new(limit=1024):
-            raise Exception, topic['name']
-            yield self.get(topic['name'], data=topic)
+            yield self.get(topic.title, obj=topic)
 
     def get(self, topic_name, **kwargs):
         """ """
-        return LazyTopic(name=topic['name'], reddit=self, **kwargs)
+        obj = kwargs.get('obj')
+        kwargs['reddit'] = self
+        if not obj:
+            self.debug("returning (lazy) topic: {}".format(topic_name))
+            return LazyTopic(name=topic_name, **kwargs)
+        else:
+            self.debug("returning topic: {}".format(topic_name))
+            return Topic(name=topic_name, **kwargs)
 
     def __getitem__(self, topic_name):
         return self.get(topic_name)
