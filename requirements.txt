@@ -1,3 +1,5 @@
-# use whatever's mentioned in setup.py
--e .
---process-dependency-links .
+praw
+python-dotenv
+click
+memoized-property
+-e git+https://github.com/mattvonrocketstein/python-loggable.git@master#egg=loggable

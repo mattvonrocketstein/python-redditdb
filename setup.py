@@ -4,15 +4,9 @@
 from setuptools import setup, find_packages
 
 PACKAGE_NAME = 'redditdb'
-REQUIREMENTS = [
-    'praw', 'python-dotenv', "click",
-    'memoized-property',
-    'loggable==0.1.0',
-]
-GITHUB_REQUIREMENTS = [
-    'https://github.com/mattvonrocketstein/python-loggable/tarball/master#egg=loggable-0.1.0',
-]
-
+# using requirements.txt
+REQUIREMENTS = []
+GITHUB_REQUIREMENTS = []
 setup(
     name=PACKAGE_NAME,
     version='0.1.0',
