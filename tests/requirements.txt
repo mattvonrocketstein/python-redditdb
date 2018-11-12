@@ -1,3 +1,7 @@
 pytest
 flake8
 tox
+coverage
+#==3.7.1
+pytest-cov
+mock
