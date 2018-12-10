@@ -4,9 +4,18 @@
 from setuptools import setup, find_packages
 
 PACKAGE_NAME = 'redditdb'
-# using requirements.txt
-REQUIREMENTS = []
-GITHUB_REQUIREMENTS = []
+REQUIREMENTS = [
+    'praw', 'python-dotenv', "click",
+    'memoized-property',
+    'loggable==0.2.0',
+    # "smartsheet-python-sdk==10.1.3.3",
+
+]
+GITHUB_REQUIREMENTS = [
+    # 'https://github.com/dmfigol/smartsheet-python-sdk/archive/no-setuptools-scm.zip#egg=smartsheet-python-sdk-10.1.3.3',
+    'https://github.com/mattvonrocketstein/python-loggable/archive/master.zip#egg=loggable-0.2.0',
+]
+
 setup(
     name=PACKAGE_NAME,
     version='0.1.0',

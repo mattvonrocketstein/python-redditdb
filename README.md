@@ -31,6 +31,12 @@ Individual *key/value pairs* are mapped to comments underneath top-level posts. 
 
 Of course in theory it's straightforward to extend this library to store anything you can serialize, so go nuts.  A key/value store piggy-backing on a comment forum is crazy, but a object database would be even more nuts..
 
+## Installation
+
+```
+pip install --process-dependency-links -e git://github.com/mattvonrocketstein/redditdb.git@mainline#egg=redditdb
+```
+
 ## Prerequisites
 
 #### Reddit User
