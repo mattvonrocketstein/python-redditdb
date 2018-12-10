@@ -1,5 +1,6 @@
 """ redditdb.topic
 """
+import json
 from loggable import Loggable
 from memoized_property import memoized_property
 
@@ -28,7 +29,14 @@ class TopicBase(Loggable):
         return self.put(key, value)
 
     def search(self, query):
-        raise Exception('niy')
+        self.debug("searching {} for {}".format(self, query))
+        query = query.lower()
+        results = []
+        for url, attachment in self.data.items():
+            if query in str(attachment).lower():
+                results.append(attachment)
+        return results
+
     # def get(self, key):
     #     return self.data[key]
     # def __getitem__(self, key):
